@@ -34,3 +34,4 @@ app.get("/category/:id", (req, res) => {
 app.listen(port, () => {
   console.log("Example listening on the port", port);
 });
+
