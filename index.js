@@ -8,8 +8,11 @@ const news = require("./data/news.json");
 app.get("/", (req, res) => {
   res.send("News api is running.");
 });
-app.get("/news-categories", (req, res) => {
+app.get("/categories", (req, res) => {
   res.send(categories);
+});
+app.get("/news", (req, res) => {
+  res.send(news);
 });
 
 app.get("/news/:id", (req, res) => {
@@ -18,7 +21,7 @@ app.get("/news/:id", (req, res) => {
   const selectedNews = news.find((n) => id === n._id);
   res.send(selectedNews);
 });
-app.get("/categories/:id", (req, res) => {
+app.get("/category/:id", (req, res) => {
   // console.log(req.params.id);
   const id = req.params.id;
   if (id === "08") {
